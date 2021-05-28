@@ -1,25 +1,26 @@
-import 'dart:async';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_background/index.dart';
-import 'package:flutter_background_example/app_retain_widget.dart';
 import 'package:flutter_background_example/socket_provider.dart';
+import 'package:flutter_background/widget/retain.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
 ValueNotifier<int> _count = ValueNotifier<int>(0);
 ValueListenable<int> get count => _count;
-void _increment() {
-  SocketProvider.socket.on('time').listen((dynamic event) {
-    NotificationService.instance().createNewChannel();
-  });
-  Stream<dynamic>.periodic(const Duration(seconds: 1)).listen((dynamic _) {
-    _count.value++;
-  });
+
+void startBG() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SocketProvider.instance().initSocket();
+}
+
+void cancelBG() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SocketProvider.instance().onClose();
 }
 
 class MyApp extends StatefulWidget {
@@ -30,7 +31,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   void initState() {
-    SocketProvider().onInit();
+    // SocketProvider.instance().initSocket();
     super.initState();
   }
 
@@ -68,16 +69,30 @@ class _MyAppState extends State<MyApp> {
                 ),
                 MaterialButton(
                   onPressed: () {
-                    FlutterBackground().startBackground(_increment);
+                    FlutterBackground().startBackground(startBG);
+                    // FlutterBackgroundService.initialize(
+                    //   increment,
+                    //   autoStart: true,
+                    //   foreground: true,
+                    // );
                   },
                   child: const Text('BGTask'),
                   color: Colors.amber,
                 ),
                 MaterialButton(
                   onPressed: () {
-                    _increment();
+                    startBG();
                   },
                   child: const Text('BGTask testing'),
+                  color: Colors.amber,
+                ),
+                MaterialButton(
+                  onPressed: () {
+                    FlutterBackground().cancelBackgroundTask(
+                      cancelBG,
+                    );
+                  },
+                  child: const Text('Cancel BGTask'),
                   color: Colors.amber,
                 ),
               ],

@@ -8,7 +8,7 @@
 #import "flutter_background-Swift.h"
 #endif
 
-@implementation FlutterBackgroundPlugin
+@implementation FlutterBackgroundPlugin 
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   [SwiftFlutterBackgroundPlugin registerWithRegistrar:registrar];
 }

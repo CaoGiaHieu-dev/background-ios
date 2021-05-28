@@ -32,7 +32,6 @@ class LocalNotificationManager
             guard settings.authorizationStatus == .authorized else { return }
           }
     }
-    @available(iOS 10.0, *)
     public func localNotification()
     {
         let content = UNMutableNotificationContent()

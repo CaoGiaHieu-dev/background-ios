@@ -6,6 +6,8 @@ PODS:
   - Flutter (1.0.0)
   - flutter_background (0.0.1):
     - Flutter
+  - flutter_background_service (0.0.1):
+    - Flutter
   - Socket.IO-Client-Swift (15.2.0):
     - Starscream (~> 3.1)
   - Starscream (3.1.1)
@@ -14,6 +16,7 @@ DEPENDENCIES:
   - adhara_socket_io (from `.symlinks/plugins/adhara_socket_io/ios`)
   - Flutter (from `Flutter`)
   - flutter_background (from `.symlinks/plugins/flutter_background/ios`)
+  - flutter_background_service (from `.symlinks/plugins/flutter_background_service/ios`)
 
 SPEC REPOS:
   trunk:
@@ -27,14 +30,17 @@ EXTERNAL SOURCES:
     :path: Flutter
   flutter_background:
     :path: ".symlinks/plugins/flutter_background/ios"
+  flutter_background_service:
+    :path: ".symlinks/plugins/flutter_background_service/ios"
 
 SPEC CHECKSUMS:
   adhara_socket_io: 7de66d78a4631172aca030e50839b29da6b42171
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
   flutter_background: bdf811cc5ff9a43a2f0a651dfd5df95a19f30626
+  flutter_background_service: a4644870cc76287aaa6147b47107e52680b79c90
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
 
-PODFILE CHECKSUM: 02d221f1e7d9462bff20092f7b45d080159f4852
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
 
 COCOAPODS: 1.10.1
