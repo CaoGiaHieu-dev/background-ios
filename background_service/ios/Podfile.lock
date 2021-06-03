@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - gmo_background_service (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - gmo_background_service (from `.symlinks/plugins/gmo_background_service/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  gmo_background_service:
+    :path: ".symlinks/plugins/gmo_background_service/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  gmo_background_service: 003ece6ad2d4e2eb57f88e62b6925635173db48a
+
+PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+
+COCOAPODS: 1.10.1
